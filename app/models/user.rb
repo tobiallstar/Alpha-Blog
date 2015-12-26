@@ -6,5 +6,8 @@ class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@(williams).(edu)+\z/i
   validates :email, presence: true, length: {in: 1...105}, uniqueness: {case_sensitive: false }, 
   format: { with: VALID_EMAIL_REGEX }
-  has_many :comments
+  # has_many :comments
+  has_secure_password
+
+
 end
