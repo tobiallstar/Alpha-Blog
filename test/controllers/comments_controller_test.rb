@@ -1,3 +1,5 @@
+=begin
+
 require 'test_helper'
 
 class CommentsControllerTest < ActionController::TestCase
@@ -47,3 +49,6 @@ class CommentsControllerTest < ActionController::TestCase
     assert_redirected_to comments_path
   end
 end
+
+
+=end

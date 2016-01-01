@@ -1,3 +1,5 @@
+=begin
+
 require 'test_helper'
 
 class ArticlesControllerTest < ActionController::TestCase
@@ -47,3 +49,6 @@ class ArticlesControllerTest < ActionController::TestCase
     assert_redirected_to articles_path
   end
 end
+
+
+=end
