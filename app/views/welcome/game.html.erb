@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>My First Website</title>
+
+</head>
+  
+<style type="text/css">
+
+#redbox {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  display: none;
+  position: relative;
+
+
+}
+
+
+</style>
+ 
+
+<body>
+
+<div id ="redbox"></div>
+
+<div>
+ <p id = "time"></p>
+</div>
+
+
+<script type="text/javascript">
+
+
+  
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.round(Math.random() * 15)];
+    }
+    return color;
+  }
+
+
+  var clickedTime; 
+  var createdTime;
+
+  function makeBox() {
+
+    
+    var time = Math.random();
+
+  time = time * 5000;
+ 
+
+  setTimeout(function() {
+
+    document.getElementById("redbox").style.borderRadius = "100px";
+
+    var top = Math.random();
+    top = top * 300;
+
+    var left = Math.random();
+
+    left = left * 500;
+
+    document.getElementById("redbox").style.top = top + "px";
+    document.getElementById("redbox").style.left = left + "px";
+    document.getElementById("redbox").style.backgroundColor = getRandomColor();
+
+    document.getElementById("redbox").style.display = "block";
+    createdTime = Date.now();
+  }, time)
+
+  }
+
+  document.getElementById('redbox').onclick=function() {
+    clickedTime = Date.now();
+    reactionTime = "Your time is: " + (clickedTime - createdTime)/1000;
+    document.getElementById("time").innerHTML = reactionTime;
+    this.style.display = "none";
+    makeBox();
+  }
+
+    makeBox();
+
+  
+
+</script>
+</body>
+
+
+
+
+</html>
